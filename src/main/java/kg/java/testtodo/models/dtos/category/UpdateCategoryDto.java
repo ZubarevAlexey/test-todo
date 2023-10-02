@@ -10,4 +10,5 @@ import lombok.*;
 @Builder(toBuilder = true)
 public class UpdateCategoryDto extends BaseDto {
     private String name;
+    private Long userId;
 }

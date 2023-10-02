@@ -9,4 +9,7 @@ import lombok.*;
 @Builder(toBuilder = true)
 public class CreatedCategoryDto {
     private String name;
+
+    private Long userId;
+
 }

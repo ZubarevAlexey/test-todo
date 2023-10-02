@@ -12,17 +12,20 @@ public class CategoryMapper {
         return CategoryDto.builder()
                 .id(model.getId())
                 .name(model.getName())
+                .userId(model.getUserId())
                 .build();
     }
     public Category fromDomain(CreatedCategoryDto model){
         return Category.builder()
                 .name(model.getName())
+                .userId(model.getUserId())
                 .build();
     }
     public Category fromDomain(UpdateCategoryDto model){
         return Category.builder()
                 .id(model.getId())
                 .name(model.getName())
+                .userId(model.getUserId())
                 .build();
     }
 }
