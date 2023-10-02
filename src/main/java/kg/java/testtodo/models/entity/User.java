@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name = "user_data", schema = "test3", catalog = "postgres")
 @Getter
 @Setter
 @NoArgsConstructor

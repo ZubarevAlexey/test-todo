@@ -49,7 +49,7 @@ public class UserController {
         } catch (EntityNotFoundException e) {
             return ResponseEntity.notFound().build();
         } catch (Exception e) {
-            return ResponseEntity.badRequest().build()
+            return ResponseEntity.badRequest().build();
         }
     }
 
