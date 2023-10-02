@@ -6,7 +6,6 @@ import lombok.*;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder(toBuilder = true)
 public class FindByIdUserDto extends BaseDto {
 }
