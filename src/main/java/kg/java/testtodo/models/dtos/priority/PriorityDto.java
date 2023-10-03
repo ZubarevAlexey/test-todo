@@ -8,7 +8,8 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class PriorityDto extends BaseDto {
+public class PriorityDto {
+    private Long id;
     private String name;
     private String color;
     private Long userId;
