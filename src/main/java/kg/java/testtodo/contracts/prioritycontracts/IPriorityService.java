@@ -14,4 +14,4 @@ public interface IPriorityService {
     HttpStatus delete(DeletePriorityDto model)throws EntityNotFoundException;
 
     PriorityDto getById(FindByIdPriorityDto model) throws EntityNotFoundException;
-}w
+}
