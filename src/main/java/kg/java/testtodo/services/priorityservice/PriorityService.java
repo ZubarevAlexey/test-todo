@@ -7,7 +7,9 @@ import kg.java.testtodo.mappers.prioritymapper.PriorityMapper;
 import kg.java.testtodo.models.dtos.priority.*;
 import kg.java.testtodo.repo.PriorityRepository;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PriorityService implements IPriorityService {
     private final PriorityRepository priorityRepository;
 
@@ -19,7 +21,7 @@ public class PriorityService implements IPriorityService {
     }
 
     @Override
-    public PriorityDto add(CreatedPriorityDto model) throws EntityDuplicateExceptions, EntityNotFoundException {
+    public PriorityDto add(CreatedPriorityDto model) throws EntityDuplicateExceptions{
         var priority = priorityRepository.findPriorityByName(model.getName());
         if (priority.isPresent()) throw new EntityDuplicateExceptions();
         var entity = priorityRepository.save(mapper.fromDomain(model));
