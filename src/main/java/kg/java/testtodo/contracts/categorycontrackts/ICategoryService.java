@@ -7,7 +7,7 @@ import kg.java.testtodo.models.dtos.user.*;
 import org.springframework.http.HttpStatus;
 
 public interface ICategoryService {
-    CategoryDto add(CreatedCategoryDto model) throws EntityDuplicateExceptions;
+    CategoryDto add(CreatedCategoryDto model) throws EntityDuplicateExceptions,EntityNotFoundException;
 
     CategoryDto update(UpdateCategoryDto model) throws EntityNotFoundException,EntityDuplicateExceptions;
 

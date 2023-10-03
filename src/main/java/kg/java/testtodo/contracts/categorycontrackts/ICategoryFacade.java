@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 
 public interface ICategoryFacade {
     CategoryDto get(FindByIdCategoryDto model) throws EntityNotFoundException;
-    CategoryDto register(CreatedCategoryDto model) throws EntityDuplicateExceptions;
+    CategoryDto register(CreatedCategoryDto model) throws EntityDuplicateExceptions, EntityNotFoundException;
     CategoryDto update(UpdateCategoryDto model) throws EntityDuplicateExceptions,EntityNotFoundException;
 
     HttpStatus delete(DeleteCategoryDto model) throws EntityNotFoundException;

@@ -24,9 +24,9 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public UserDto add(CreatedUserDto model) throws EntityDuplicateExceptions {
-        var user = userRepository.findUserByName(model.getName());
-        if (user.isPresent()) throw new EntityDuplicateExceptions();
+    public UserDto add(CreatedUserDto model) throws EntityNotFoundException {
+        var user = userRepository.findById(model.getId());
+        if (user.isPresent()) throw new EntityNotFoundException();
         var entity = userRepository.save(userMapper.fromDomain(model));
         return userMapper.toDomain(entity);
     }

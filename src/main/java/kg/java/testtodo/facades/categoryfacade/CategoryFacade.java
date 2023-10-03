@@ -24,7 +24,7 @@ public class CategoryFacade implements ICategoryFacade {
     }
 
     @Override
-    public CategoryDto register(CreatedCategoryDto model) throws EntityDuplicateExceptions {
+    public CategoryDto register(CreatedCategoryDto model) throws EntityDuplicateExceptions, EntityNotFoundException {
         return service.add(model);
     }
 

@@ -23,7 +23,7 @@ public class UserFacade implements IUserFacade {
     }
 
     @Override
-    public UserDto register(CreatedUserDto model) throws EntityDuplicateExceptions {
+    public UserDto register(CreatedUserDto model) throws  EntityNotFoundException {
         return userService.add(model);
     }
 

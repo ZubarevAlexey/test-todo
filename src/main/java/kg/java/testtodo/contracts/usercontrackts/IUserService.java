@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 
 
 public interface IUserService {
-    UserDto add(CreatedUserDto model) throws EntityDuplicateExceptions;
+    UserDto add(CreatedUserDto model) throws EntityNotFoundException;
 
     UserDto update(UpdateUserDto model) throws EntityNotFoundException,EntityDuplicateExceptions;
 

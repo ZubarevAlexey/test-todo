@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 public interface IUserFacade {
 
 UserDto get(FindByIdUserDto model) throws EntityNotFoundException;
-UserDto register(CreatedUserDto model) throws EntityDuplicateExceptions;
+UserDto register(CreatedUserDto model) throws EntityDuplicateExceptions, EntityNotFoundException;
 UserDto update(UpdateUserDto model) throws EntityDuplicateExceptions,EntityNotFoundException;
 
 HttpStatus delete(DeleteUserDto model) throws EntityNotFoundException;

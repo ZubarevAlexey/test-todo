@@ -6,6 +6,7 @@ import kg.java.testtodo.exceptions.EntityNotFoundException;
 import kg.java.testtodo.mappers.categorymapper.CategoryMapper;
 import kg.java.testtodo.models.dtos.category.*;
 import kg.java.testtodo.repo.CategoryRepository;
+import kg.java.testtodo.repo.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -16,16 +17,19 @@ import javax.transaction.Transactional;
 @Transactional
 public class CategoryService implements ICategoryService {
 
+    private UserRepository userRepository;
+
     private CategoryMapper categoryMapper;
     private CategoryRepository repository;
 
-    public CategoryService(CategoryMapper categoryMapper, CategoryRepository repository) {
+    public CategoryService(UserRepository userRepository, CategoryMapper categoryMapper, CategoryRepository repository) {
+        this.userRepository = userRepository;
         this.categoryMapper = categoryMapper;
         this.repository = repository;
     }
 
     @Override
-    public CategoryDto add(CreatedCategoryDto model) throws EntityDuplicateExceptions {
+    public CategoryDto add(CreatedCategoryDto model) throws EntityDuplicateExceptions,EntityNotFoundException {
         var category = repository.findCategoryByName(model.getName());
         if (category.isPresent()) throw new EntityDuplicateExceptions();
         var entity = repository.save(categoryMapper.fromDomain(model));
