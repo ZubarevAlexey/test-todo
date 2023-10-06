@@ -5,7 +5,7 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class UserPriorityDataDto {
+public class UserSearchDataDto {
     private String name;
     private String email;
 }

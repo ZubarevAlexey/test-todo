@@ -3,7 +3,7 @@ package kg.java.testtodo.core.mappers.prioritymapper;
 import kg.java.testtodo.core.models.dtos.priority.CreatedPriorityDto;
 import kg.java.testtodo.core.models.dtos.priority.PriorityDto;
 import kg.java.testtodo.core.models.dtos.priority.UpdatedPriorityDto;
-import kg.java.testtodo.core.models.dtos.user.UserPriorityDataDto;
+import kg.java.testtodo.core.models.dtos.user.UserSearchDataDto;
 import kg.java.testtodo.core.models.entity.Priority;
 
 public class PriorityMapper {
@@ -14,7 +14,7 @@ public class PriorityMapper {
                 .id(model.getId())
                 .name(model.getName())
                 .color(model.getColor())
-                .user(UserPriorityDataDto
+                .user(UserSearchDataDto
                         .builder()
                         .email(user.getEmail())
                         .name(user.getName())

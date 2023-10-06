@@ -1,6 +1,6 @@
 package kg.java.testtodo.core.models.dtos.priority;
 
-import kg.java.testtodo.core.models.dtos.user.UserPriorityDataDto;
+import kg.java.testtodo.core.models.dtos.user.UserSearchDataDto;
 import lombok.*;
 
 @Getter
@@ -12,7 +12,7 @@ public class PriorityDto {
     private Long id;
     private String name;
     private String color;
-    private UserPriorityDataDto user;
+    private UserSearchDataDto user;
 
 
 

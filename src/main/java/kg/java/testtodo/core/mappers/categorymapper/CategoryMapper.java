@@ -3,7 +3,7 @@ package kg.java.testtodo.core.mappers.categorymapper;
 import kg.java.testtodo.core.models.dtos.category.CategoryDto;
 import kg.java.testtodo.core.models.dtos.category.CreatedCategoryDto;
 import kg.java.testtodo.core.models.dtos.category.UpdateCategoryDto;
-import kg.java.testtodo.core.models.dtos.user.UserPriorityDataDto;
+import kg.java.testtodo.core.models.dtos.user.UserSearchDataDto;
 import kg.java.testtodo.core.models.entity.Category;
 
 public class CategoryMapper {
@@ -13,7 +13,7 @@ public class CategoryMapper {
         return CategoryDto.builder()
                 .id(model.getId())
                 .name(model.getName())
-                .user(UserPriorityDataDto.builder()
+                .user(UserSearchDataDto.builder()
                         .email(user.getEmail())
                         .name(user.getName())
                         .build())

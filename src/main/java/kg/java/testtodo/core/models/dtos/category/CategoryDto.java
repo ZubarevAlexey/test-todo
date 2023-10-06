@@ -1,6 +1,6 @@
 package kg.java.testtodo.core.models.dtos.category;
 
-import kg.java.testtodo.core.models.dtos.user.UserPriorityDataDto;
+import kg.java.testtodo.core.models.dtos.user.UserSearchDataDto;
 import lombok.*;
 
 @Getter@Setter
@@ -11,5 +11,5 @@ public class CategoryDto {
     private Long id;
     private String name;
 
-    private UserPriorityDataDto user;
+    private UserSearchDataDto user;
 }
