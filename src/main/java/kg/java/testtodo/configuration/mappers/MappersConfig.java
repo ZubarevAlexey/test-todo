@@ -2,6 +2,7 @@ package kg.java.testtodo.configuration.mappers;
 
 import kg.java.testtodo.core.mappers.categorymapper.CategoryMapper;
 import kg.java.testtodo.core.mappers.prioritymapper.PriorityMapper;
+import kg.java.testtodo.core.mappers.taskmapper.TaskMapper;
 import kg.java.testtodo.core.mappers.usermapper.UserMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,5 +23,9 @@ public class MappersConfig {
     @Bean
     UserMapper buildUserMapper() {
         return new UserMapper();
+    }
+    @Bean
+    TaskMapper buildTaskMapper(){
+        return new TaskMapper();
     }
 }
