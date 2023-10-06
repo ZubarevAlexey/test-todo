@@ -31,17 +31,21 @@ public class CategoryService implements ICategoryService {
     public CategoryDto add(CreatedCategoryDto model) throws EntityDuplicateExceptions,EntityNotFoundException {
         var category = repository.findCategoryByName(model.getName());
         if (category.isPresent()) throw new EntityDuplicateExceptions();
-        var entity = repository.save(categoryMapper.fromDomain(model));
+        var user = userRepository.findById(model.getUserId()).orElseThrow(EntityNotFoundException::new);
+        var entity = categoryMapper.fromDomain(model);
+        entity.setUser(user);
+        entity = repository.save(entity);
         return categoryMapper.toDomain(entity);
     }
 
     @Override
     public CategoryDto update(UpdateCategoryDto model) throws EntityNotFoundException, EntityDuplicateExceptions {
         var category = repository.findById(model.getId()).orElseThrow(EntityNotFoundException::new);
+        var user = userRepository.findById(model.getUserId()).orElseThrow(EntityNotFoundException::new);
         var entity = category.toBuilder()
                 .id(model.getId())
                 .name(model.getName())
-                .userId(model.getUserId())
+                .user(user)
                 .build();
         repository.save(entity);
         return categoryMapper.toDomain(entity);

@@ -21,20 +21,22 @@ public class Category {
     private Long id;
 
     private String name;
-    @Column(name = "user_id")
-    private Long userId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id",referencedColumnName = "id", nullable = false)
+    private User user;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Category category = (Category) o;
-        return Objects.equals(id, category.id) && Objects.equals(name, category.name) && Objects.equals(userId, category.userId);
+        return Objects.equals(id, category.id) && Objects.equals(name, category.name) && Objects.equals(user, category.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, userId);
+        return Objects.hash(id, name, user);
     }
 
     @Override
