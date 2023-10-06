@@ -59,7 +59,7 @@ public class PriorityService implements IPriorityService {
 
     @Override
     public PriorityDto getById(FindByIdPriorityDto model) throws EntityNotFoundException {
-        var priority = priorityRepository.findById(model.getId()).orElseThrow(EntityNotFoundException::new);
-        return mapper.toDomain(priority);
+            var priority = priorityRepository.findById(model.getId()).orElseThrow(EntityNotFoundException::new);
+            return mapper.toDomain(priority);
     }
 }

@@ -9,8 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 
-@Service
-@Transactional
+
 public interface ITaskService {
     TaskDto add(CreatedTaskDto model) throws EntityDuplicateExceptions, EntityNotFoundException;
 
