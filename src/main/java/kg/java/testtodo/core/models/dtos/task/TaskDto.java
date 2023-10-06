@@ -16,11 +16,17 @@ public class TaskDto {
     private Long id;
     private String title;
     private Date taskDate;
+
     private Boolean completed;
     private PrioritySearchDataDto priority;
     private UserSearchDataDto user;
     private CategorySearchDataDto category;
-
+//
+//    private Integer pageNumber;
+//    private Integer pageSize;
+//
+//    private String sortColumn;
+//    private String sortDirection;
 
 
 }
